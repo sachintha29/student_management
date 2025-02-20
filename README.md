@@ -93,17 +93,17 @@ Authorization: Bearer {token}
 ### **Student API (Requires Authentication)**
 #### Get All Students
 ```http
-GET /api/user/students
+GET /api//students
 ```
 
 #### Get a Single Student
 ```http
-GET /api/user/students/{id}
+GET /api/students/{id}
 ```
 
 #### Create a New Student
 ```http
-POST /api/user/students
+POST /api/students
 ```
 **Request Body:**
 ```json
@@ -115,7 +115,7 @@ POST /api/user/students
 
 #### Update Student
 ```http
-PUT /api/user/students/{id}
+PUT /api/students/{id}
 ```
 **Request Body:**
 ```json
@@ -127,55 +127,7 @@ PUT /api/user/students/{id}
 
 #### Delete Student
 ```http
-DELETE /api/user/students/{id}
+DELETE /api/students/{id}
 ```
 
-
-API Endpoints
-Authentication Routes
-Method	Endpoint	Description	Authentication Required
-POST	/api/user/register	Register a new user	❌ No
-POST	/api/user/login	Login and get token	❌ No
-POST	/api/user/logout	Logout the user	✅ Yes
-Student Management Routes (auth:sanctum required)
-Method	Endpoint	Description	Authentication Required
-GET	/api/students	List all students	✅ Yes
-POST	/api/students	Create a new student	✅ Yes
-GET	/api/students/{id}	Get a specific student	✅ Yes
-PUT	/api/students/{id}	Update a student	✅ Yes
-DELETE	/api/students/{id}	Delete a student	✅ Yes
-Authentication Usage
-Register
-Send a POST request to /api/user/register with:
-
-json
-Copy
-Edit
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "password_confirmation": "password123"
-}
-Login
-Send a POST request to /api/user/login with:
-
-json
-Copy
-Edit
-{
-  "email": "john@example.com",
-  "password": "password123"
-}
-Response:
-
-
-{
-  "user": { "id": 1, "name": "John Doe", "email": "john@example.com" },
-  "token": "your-access-token"
-}
-Use this token for authenticated requests in the Authorization header:
-
-
-Authorization: Bearer your-access-token
 
